@@ -1,12 +1,13 @@
 // Iteration #1: Find the maximum
 function maxOfTwoNumbers(num1, num2) {
+   // return (math.max(num1,num2))
   if(num1 > num2){
     return num1;
   } else {
     return num2;
   }
 }
-  
+ 
 
 
 
@@ -20,14 +21,14 @@ function findLongestWord(word) {
    if(word.length === 1){
      return word[0];
    }
-   let largest = ''
+   let longestWord = ''
 
    for(let i = 0; i < word.length; i++){
-     if(word[i].length > largest.length){
-       largest = word[i]
+     if(word[i].length > longestWord.length){
+       longestWord = word[i]
      }
    }
-   return largest
+   return longestWord
 }
 
 
@@ -76,7 +77,8 @@ function averageNumbers(anArray) {
   let sum = sumNumbers(anArray);
   let average = sum /anArray.length;
   return average;
-}
+} // if(numbers.length === 0) return null
+// return sumNumbers(numbers)/numbers.length
 
 
 // Level 2: Array of strings
@@ -94,6 +96,8 @@ function averageWordLength(anArray) {
   averageLength = totalLength / anArray.length;
   return averageLength;
  }
+ // if(words.length === 0) return null
+ // return(words)/words.length
 
 // Bonus - Iteration #4.1
 function avg(anArray) {
@@ -112,6 +116,8 @@ function avg(anArray) {
   averageLength = totalLength / anArray.length;
   return +averageLength.toFixed(2);
 }
+// if(arr.lenght === 0) return null
+// return number((sum(arr)/arr.length).toFixed(2))
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
@@ -150,9 +156,6 @@ function doesWordExist(anArray, aWord) {
   if(!anArray.length){
     return null;
   }
-  if (!anArray) {
-    return null;
-  }
   for (let i = 0; i < anArray.length; i++){
   if(anArray[i] === aWord ){
     return true;
@@ -182,9 +185,7 @@ function howManyTimes(arrayOfWords, wordSearch) {
   let count = 0;
   for (i = 0; i < arrayOfWords.length; i++){
     if(arrayOfWords[i] === wordSearch){
-      count += 1;
-    } else{
-      continue
+      count ++;
     }
   }
   return count;
@@ -216,10 +217,12 @@ const matrix = [
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 ];
 
-function greatestProduct() {
-  
+function greatestProduct(matrix) {
+  let max = 0
+  for(let i = 0; i < matrix.length; i++) {
+    max = matrix[i][i] * matrix[i][i+1] *matrix[i][i+2] * matrix[i][i+3]
 }
-
+function greatestProductOfDiagonals(matrix)
 
 
 
